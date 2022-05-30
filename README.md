@@ -1,1 +1,70 @@
 # 1-Sunucuya-2-Node-Kurmak-Cosmos
+
+### Cosmos ağında 2 adet validatörünüz var ve ikisini de aynı sunucu da çalıştırma istiyorsunuz... 
+## Ne yapmalısınız?
+
+Yapmanız gereken tek şey portların çakışmasını engellemek. 
+Bunun için `config.toml`, `client.toml`, `app.toml` dosyalarının içindeki portların hepsini değiştirmeniz gerekiyor...
+
+Fakat bunun daha kolay bir yolu var: 
+
+### Terminale aşağıdaki kodları düzenleyerek yazın: 
+** Aşağıdaki örnek kyve ye aittir. siz düzenlemek istediğiniz nodeun bulunduğu klasöre göre aşağıdaki kodlardaki `.kyve` yazılarını düzenleyin. **
+Aşağıdaki kodları dikkatlice inceleyin ve mantığını anlamaya çalışın. 
+ilk yazan port orjinal porttur, onu değiştirmeyeceğiz. bir sonraki ise değiştirmek istediğimiz porttur. 
+yani 26658 orjinal 36358 değiştirmek istediğimiz. Bunu bununla değiştir diyoruz yani aslında aşağıdaki kodları kullanarak. 
+Bir orjinal bir değiştir, bir orjinal bir değiştir. 
+
+Yani sizin yapmanız gereken bir değiştirme bir değiştir. 
+Kodları incelerseniz anlatmak istediğimi daha iyi anlayacaksınız. 
+
+Şimdi gelelim işlemlere...
+
+Aşağıdaki kodları sırasıyla yazalım:
+
+```
+sed -i.bak -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:36358\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:36357\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:6351\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:36356\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":36350\"%" $HOME/.kyve/config/config.toml
+```
+
+```
+sed -i.bak -e "s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:9350\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:9351\"%" $HOME/.kyve/config/app.toml
+```
+
+```
+sed -i.bak -e "s%^node = \"tcp://localhost:26657\"%node = \"tcp://localhost:36357\"%" $HOME/.kyve/config/client.toml
+```
+
+```
+external_address=$(wget -qO- eth0.me)
+```
+
+```
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:36356\"/" $HOME/.kyve/config/config.toml
+```
+
+Tüm işlemler bu kadar! yukarıdaki kodları yazarak 3 dosyanın içindeki tüm portları değiştirdiniz. 
+
+
+###Özet şekilde anlatmak gerekirse değiştirmemiz gereken portlar şunlar: 
+**`Config.toml` klasörü içerisinde:**
+proxy_app portu orjinali `26658` dir.
+laddr portu orjinali `26657` dir.
+pprof_laddr portu orjinali `6060` dır.
+Başka bir laddr portu  orjinali `26656` dır
+ve prometheus listen portu orjinali `26660` dır.
+Ekstra olarak externall_adress portu da ekliyoruz en son. 
+
+**`App.toml` klasörü içerisinde:**
+address portu orjinali `9090` dır.
+ve diğer address portu orjinali `9091` dir.
+
+**`Client.toml` içerisinde:**
+Node portu orjinali `26657` dir. 
+
+Yukarıdaki kodlarda bulunan orjinal portları değiştirmeyin! 
+Diğer portları kendinize göre düzenleyin. 
+
+
+
+
+
