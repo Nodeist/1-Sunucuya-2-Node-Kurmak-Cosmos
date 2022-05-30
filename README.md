@@ -83,8 +83,10 @@ Fakat daha sonra senkronizasyon ve stres testleri sırasında sunucuzda mutlaka 
 Gözlemlerime dayanarak söyleyebileceğim şeyler şunlar: 
 
 Cpu kullanımı: 1 node 2cpu harcıyor.
+
 Ram kullanımı: 1 node 2.5 - 3 gb ram harcıyor. 
-Disk kullanımı: 1 node 1 aydan uzun süren testlerde ortalama 70 80gb disk alanı harcıyor. 
+
+Disk kullanımı: 1 node ortalama 1 ay süren testlerde ortalama 70 80gb disk alanı harcıyor. 
 
 tabi bunlar genel analizlerim. her zaman böyle olacak diye bir kural yok. ama ortalama sorunsuz bir cosmos doğrulayıcısının harcadığı gereksinimler bu şekilde... 
 
