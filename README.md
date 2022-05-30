@@ -34,13 +34,6 @@ sed -i.bak -e "s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:9350\"%; s%^add
 sed -i.bak -e "s%^node = \"tcp://localhost:26657\"%node = \"tcp://localhost:36357\"%" $HOME/.kyve/config/client.toml
 ```
 
-```
-external_address=$(wget -qO- eth0.me)
-```
-
-```
-sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:36356\"/" $HOME/.kyve/config/config.toml
-```
 
 Tüm işlemler bu kadar! yukarıdaki kodları yazarak 3 dosyanın içindeki tüm portları değiştirdiniz. 
 
@@ -59,7 +52,6 @@ Başka bir laddr portu  orjinali `26656` dır
 
 ve prometheus listen portu orjinali `26660` dır.
 
-Ekstra olarak externall_adress portu da ekliyoruz en son. 
 
 
 
