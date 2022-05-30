@@ -73,5 +73,5 @@ Diğer portları kendinize göre düzenleyin.
 
 
 
-*İpucu: Eğer sunucunuz çok güçlü ise sınırsız sayıda cosmos node unu tek sunucuda çalıştırabilirsiniz. Tek yapmanız gereken hiçbirinin portunun diğeriyle çakışmamasını sağlamak.
+*İpucu: Eğer sunucunuz çok güçlü ise sınırsız sayıda cosmos node unu tek sunucuda çalıştırabilirsiniz. Tek yapmanız gereken hiçbirinin portunun diğeriyle çakışmamasını sağlamak.*
 
