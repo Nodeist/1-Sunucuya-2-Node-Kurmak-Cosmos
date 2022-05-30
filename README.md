@@ -45,23 +45,38 @@ sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:3
 Tüm işlemler bu kadar! yukarıdaki kodları yazarak 3 dosyanın içindeki tüm portları değiştirdiniz. 
 
 
-###Özet şekilde anlatmak gerekirse değiştirmemiz gereken portlar şunlar: 
+### Özet şekilde anlatmak gerekirse değiştirmemiz gereken portlar şunlar: 
+
 **`Config.toml` klasörü içerisinde:**
+
 proxy_app portu orjinali `26658` dir.
+
 laddr portu orjinali `26657` dir.
+
 pprof_laddr portu orjinali `6060` dır.
+
 Başka bir laddr portu  orjinali `26656` dır
+
 ve prometheus listen portu orjinali `26660` dır.
+
 Ekstra olarak externall_adress portu da ekliyoruz en son. 
 
+
+
 **`App.toml` klasörü içerisinde:**
+
 address portu orjinali `9090` dır.
+
 ve diğer address portu orjinali `9091` dir.
 
+
+
 **`Client.toml` içerisinde:**
+
 Node portu orjinali `26657` dir. 
 
 Yukarıdaki kodlarda bulunan orjinal portları değiştirmeyin! 
+
 Diğer portları kendinize göre düzenleyin. 
 
 
