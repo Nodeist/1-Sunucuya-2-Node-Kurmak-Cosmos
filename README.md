@@ -91,7 +91,6 @@ Disk kullanımı: 1 node ortalama 1 ay süren testlerde ortalama 70 80gb disk al
 tabi bunlar genel analizlerim. her zaman böyle olacak diye bir kural yok. ama ortalama sorunsuz bir cosmos doğrulayıcısının harcadığı gereksinimler bu şekilde... 
 
 Yine de katıldığımız projelerin testnet olduğunu unutmayın. test sırasında hdd lerinize fazla yüklenilebilir. databaseleriniz şişebilir. 
-örneğin logları görüntülemek için kod girdiğimizde akan yazıların hep kaydedilir. ve bu da db nin büyümesi sorununu yaratır. onun çözümü yok mu? elbette var:) 
-bir sonraki yazımızda pruning (budama) işlemlerinden söz ederiz. şimdilik bu kadar yeter :) *
+her zaman sorun yaşamamak adına bir node için ekstra 100gb boş alan ayırın. *
 
 **Happy Validating!**
