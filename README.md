@@ -75,3 +75,21 @@ Diğer portları kendinize göre düzenleyin.
 
 *İpucu: Eğer sunucunuz çok güçlü ise sınırsız sayıda cosmos node unu tek sunucuda çalıştırabilirsiniz. Tek yapmanız gereken hiçbirinin portunun diğeriyle çakışmamasını sağlamak.*
 
+*İpucu2: Her node için minimum 100gb disk alanı ayırmanızı öneririm. Diyelim ki 8cpu 16 ram 200gb bir sunucunuz var. 
+bu sunucuya maksimum 2 adet node kurun. İlk kurulum sırasında node boyutu gözünüze düşük gelebilir. genellikte ilk kurulumda tüm nodelar maksimum 6-7gb alan kaplarlar. 
+Fakat daha sonra senkronizasyon ve stres testleri sırasında sunucuzda mutlaka ekstra alan olmalı. blok sayısı arttıkça kullanılan disk alanının da hızla artacağını unutmayın.*
+
+*İpucu3: Ekstra bir işlem gerektirmeyen ve özel gereksinim istemeyen standart cosmos nodelarına 4cpu 8 ram 150gb lık bir sunucu genellikle yeterlidir. 
+Gözlemlerime dayanarak söyleyebileceğim şeyler şunlar: 
+
+Cpu kullanımı: 1 node 2cpu harcıyor.
+Ram kullanımı: 1 node 2.5 - 3 gb ram harcıyor. 
+Disk kullanımı: 1 node 1 aydan uzun süren testlerde ortalama 70 80gb disk alanı harcıyor. 
+
+tabi bunlar genel analizlerim. her zaman böyle olacak diye bir kural yok. ama ortalama sorunsuz bir cosmos doğrulayıcısının harcadığı gereksinimler bu şekilde... 
+
+Yine de katıldığımız projelerin testnet olduğunu unutmayın. test sırasında hdd lerinize fazla yüklenilebilir. databaseleriniz şişebilir. 
+örneğin logları görüntülemek için kod girdiğimizde akan yazıların hep kaydedilir. ve bu da db nin büyümesi sorununu yaratır. onun çözümü yok mu? elbette var:) 
+bir sonraki yazımızda pruning (budama) işlemlerinden söz ederiz. şimdilik bu kadar yeter :) *
+
+**Happy Validating!**
